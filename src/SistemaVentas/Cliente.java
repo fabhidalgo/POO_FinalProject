@@ -1,4 +1,4 @@
-package P_FINAL;
+package SistemaVentas;
 public class Cliente {
     private String nombre;
     private String direccion;

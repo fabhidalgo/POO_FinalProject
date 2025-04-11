@@ -1,4 +1,4 @@
-package P_FINAL;
+package SistemaVentas;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class ClienteManager {

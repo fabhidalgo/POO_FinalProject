@@ -1,4 +1,4 @@
-package P_FINAL;
+package SistemaVentas;
 public class Producto {
     private String name;
     private double precio;

@@ -1,4 +1,4 @@
-package P_FINAL;
+package SistemaVentas;
 import java.util.ArrayList;
 public class Pedido {
     private Cliente cliente;
