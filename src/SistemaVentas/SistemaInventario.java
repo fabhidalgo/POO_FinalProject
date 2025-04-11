@@ -1,9 +1,12 @@
 package SistemaVentas;
+import SistemaInventario.SI_Cliente;
+import SistemaInventario.SI_Inventario;
 import java.util.Scanner;
+
 public class SistemaInventario {
-    private Inventario inventario = new Inventario();
-    private ClienteManager clienteManager = new ClienteManager();
-    private PedidoManager pedidoManager = new PedidoManager(inventario, clienteManager);
+    private SI_Inventario inventario = new SI_Inventario();
+    private SI_Cliente cliente = new SI_Cliente();
+    private PedidoManager pedidoManager = new PedidoManager(inventario, cliente);
     private Scanner scanner = new Scanner(System.in);
 
     public void ejecutar() {
@@ -24,7 +27,7 @@ public class SistemaInventario {
             switch (opcion) {
                 case 1 -> inventario.agregarProducto();
                 case 2 -> inventario.verInventario();
-                case 3 -> clienteManager.agregarCliente();
+                case 3 -> cliente.agregarCliente();
                 case 4 -> pedidoManager.hacerPedido();
                 case 5 -> pedidoManager.verPedidos();
                 case 6 -> {

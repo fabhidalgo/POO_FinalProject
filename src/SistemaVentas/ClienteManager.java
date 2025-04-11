@@ -2,7 +2,7 @@ package SistemaVentas;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class ClienteManager {
-    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private ArrayList<SV_Cliente> clientes = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
     public void agregarCliente() {
@@ -11,13 +11,13 @@ public class ClienteManager {
         System.out.print("Ingrese dirección del cliente: ");
         String direccion = scanner.nextLine();
 
-        Cliente cliente = new Cliente(nombre, direccion);
+        SV_Cliente cliente = new SV_Cliente(nombre, direccion);
         clientes.add(cliente);
         System.out.println("Cliente agregado.");
     }
 
-    public Cliente buscarCliente(String nombre) {
-        for (Cliente cliente : clientes) {
+    public SV_Cliente buscarCliente(String nombre) {
+        for (SV_Cliente cliente : clientes) {
             if (cliente.toString().contains(nombre)) {
                 return cliente;
             }

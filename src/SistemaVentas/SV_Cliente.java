@@ -1,14 +1,15 @@
 package SistemaVentas;
-public class Cliente {
+public class SV_Cliente {
     private String nombre;
     private String direccion;
 
-    public Cliente(String nombre, String direccion) {
+    public SV_Cliente(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
     }
 
+    @Override
     public String toString() {
-        return nombre + " | Dirección: " + direccion;
+        return nombre + " | Direccion=" + direccion;
     }
 }

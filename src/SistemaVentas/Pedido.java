@@ -1,14 +1,15 @@
 package SistemaVentas;
+import SistemaInventario.SI_Producto;
 import java.util.ArrayList;
 public class Pedido {
-    private Cliente cliente;
-    private ArrayList<Producto> productos = new ArrayList<>();
+    private SV_Cliente cliente;
+    private ArrayList<SI_Producto> productos = new ArrayList<>();
 
-    public Pedido(Cliente cliente) {
+    public Pedido(SV_Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public void agregarProducto(Producto producto, int cantidad) {
+    public void agregarProducto(SI_Producto producto, int cantidad) {
         if (producto.getStock() >= cantidad) {
             producto.reducirStock(cantidad);
             for (int i = 0; i < cantidad; i++){
@@ -20,14 +21,19 @@ public class Pedido {
         }
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
     public String toString() {
         String resultado = "Cliente: " + cliente;
-        ArrayList<Producto> productosProcesados = new ArrayList<>();
+        ArrayList<SI_Producto> productosProcesados = new ArrayList<>();
       
-        for (Producto producto : productos) {
+        for (SI_Producto producto : productos) {
             if (!productosProcesados.contains(producto)) {
                 int cantidad = 0;
-                for (Producto p : productos) {
+                for (SI_Producto p : productos) {
                     if (p.equals(producto)) {
                         cantidad++;
                     }
@@ -35,7 +41,7 @@ public class Pedido {
                 double precioUnitario = producto.getPrecio();
                 double precioTotal = precioUnitario * cantidad;
                 
-                 resultado = resultado + " | Producto: " + producto.getName() + " | Cantidad: " + cantidad + " | Precio Unitario: " + precioUnitario + " | Precio Total: " + precioTotal;
+                 resultado = resultado + " | Producto: " + producto + " | Cantidad: " + cantidad + " | Precio Unitario: " + precioUnitario + " | Precio Total: " + precioTotal;
                  
                  productosProcesados.add(producto);
             }
