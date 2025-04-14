@@ -4,35 +4,32 @@ import SistemaInventario.SI_Inventario;
 import SistemaInventario.SI_Producto;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class PedidoManager {
+
+public class SV_PedidoManager {
     private SI_Inventario inventario;
-    private SI_Cliente cliente;
-    private ArrayList<Pedido> pedidos = new ArrayList<>();
+    private SI_Cliente siCliente;
+    private ArrayList<SV_Pedido> pedidos = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
-    public PedidoManager(SI_Inventario inventario, ClienteManager clienteManager) {
+    public SV_PedidoManager(SI_Inventario inventario, SI_Cliente cliente) {
         this.inventario = inventario;
-        this.cliente = clientesv;
-    }
-
-    PedidoManager(SI_Inventario inventario, SI_Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.siCliente = cliente;
     }
 
     public void hacerPedido() {
         System.out.print("Ingrese nombre del cliente: ");
-        String nombreSV_Cliente = scanner.nextLine();
-        SV_Cliente clientesv = SI_Cliente.buscarCliente(nombreSV_Cliente);
+        String nombreCliente = scanner.nextLine();
+        SV_Cliente clienteEncontrado = siCliente.buscarCliente(nombreCliente);
 
-        if (clientesv == null) {
+        if (clienteEncontrado == null) {
             System.out.println("Cliente no encontrado.");
             return;
         }
 
-        Pedido pedido = new Pedido(clientesv);
+        SV_Pedido pedido = new SV_Pedido(clienteEncontrado);
 
         while (true) {
-            System.out.print("Ingrese nombre del producto (o 'fin' para terminar): ");
+            System.out.print("Ingrese el nombre del producto o 'fin' para terminar: ");
             String nombreProducto = scanner.nextLine();
             if (nombreProducto.equalsIgnoreCase("fin")) break;
 
@@ -53,9 +50,9 @@ public class PedidoManager {
 
     public void verPedidos() {
         if (pedidos.isEmpty()) {
-            System.out.println("Pedido no creado.");
+            System.out.println("No se ha creado ningún pedido.");
         } else {
-            for (Pedido pedido : pedidos) {
+            for (SV_Pedido pedido : pedidos) {
                 System.out.println(pedido);
             }
         }

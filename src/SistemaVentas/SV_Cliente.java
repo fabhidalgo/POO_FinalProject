@@ -8,8 +8,16 @@ public class SV_Cliente {
         this.direccion = direccion;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
     @Override
     public String toString() {
-        return nombre + " | Direccion=" + direccion;
+        return nombre + " | Direccion: " + direccion;
     }
 }

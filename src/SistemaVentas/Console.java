@@ -3,19 +3,19 @@ import SistemaInventario.SI_Cliente;
 import SistemaInventario.SI_Inventario;
 import java.util.Scanner;
 
-public class SistemaInventario {
+public class Console {
     private SI_Inventario inventario = new SI_Inventario();
     private SI_Cliente cliente = new SI_Cliente();
-    private PedidoManager pedidoManager = new PedidoManager(inventario, cliente);
+    private SV_PedidoManager pedidoManager = new SV_PedidoManager(inventario, cliente);
     private Scanner scanner = new Scanner(System.in);
 
     public void ejecutar() {
         boolean salir = false;
         while (!salir) {
-            System.out.println("--- Admin Tienda Virtual Coca-Cola CO. ---");
-            System.out.println("1. Agregar Producto");
+            System.out.println("----- Bienvenido al Sistema -----");
+            System.out.println("1. Agregar Productos");
             System.out.println("2. Ver Inventario");
-            System.out.println("3. Agregar Cliente");
+            System.out.println("3. Agregar Clientes");
             System.out.println("4. Hacer Pedido");
             System.out.println("5. Ver Pedidos");
             System.out.println("6. Salir");
@@ -37,10 +37,5 @@ public class SistemaInventario {
                 default -> System.out.println("Opción inválida.");
             }
         }
-    } 
-   
-    public static void main(String[] args) {
-        SistemaInventario sistema = new SistemaInventario();
-        sistema.ejecutar();
     }
 }

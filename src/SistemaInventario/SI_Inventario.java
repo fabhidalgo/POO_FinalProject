@@ -1,6 +1,7 @@
 package SistemaInventario;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class SI_Inventario {
     private ArrayList<SI_Producto> productos = new ArrayList<>();
     private Scanner scanner = new Scanner (System.in);
@@ -10,9 +11,9 @@ public class SI_Inventario {
         while (continuar) {
             System.out.print("Ingrese el nombre del producto: ");
             String item = scanner.nextLine();
-            System.out.print("Ingrese el precio del producto");
+            System.out.print("Ingrese el precio del producto: ");
             double precio = scanner.nextDouble();
-            System.out.print("Ingrese el stcok del producto: ");
+            System.out.print("Ingrese el stock del producto: ");
             int stock = scanner.nextInt();
             scanner.nextLine();
             
@@ -34,14 +35,14 @@ public class SI_Inventario {
         } else {
             System.out.println("--- Inventario de productos ---");
             for (SI_Producto producto : productos){
-                System.out.println(producto.toString());              
+                System.out.println(producto);              
             }
         }
     }
     
-    public SI_Producto buscarProducto(String name){
+    public SI_Producto buscarProducto(String nombre){
         for (SI_Producto producto : productos){
-            if (producto.getItem().equalsIgnoreCase(name)){
+            if (producto.getItem().equalsIgnoreCase(nombre)){
                 return producto;
             }
         }

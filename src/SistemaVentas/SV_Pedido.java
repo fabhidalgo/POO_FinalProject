@@ -1,11 +1,11 @@
 package SistemaVentas;
 import SistemaInventario.SI_Producto;
 import java.util.ArrayList;
-public class Pedido {
+public class SV_Pedido {
     private SV_Cliente cliente;
     private ArrayList<SI_Producto> productos = new ArrayList<>();
 
-    public Pedido(SV_Cliente cliente) {
+    public SV_Pedido(SV_Cliente cliente) {
         this.cliente = cliente;
     }
 

@@ -33,21 +33,13 @@ public class SI_Producto {
     public void setStock(int stock) {
         this.stock = stock;
     }
-    
-    public void redcucirStock(int cantidad) {
+        
+    public void reducirStock(int cantidad) {
         this.stock -= cantidad;
     }
-
-    /**
-     *
-     * @return
-     */
+    
     @Override
     public String toString() {
-        return " Productos: " + item + " | Precio: S/" + precio + " | Stock: " + stock;
+        return " Producto: " + item + " | Precio: S/" + precio + " | Stock: " + stock;
     }
-
-    public void reducirStock(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    }
+}
