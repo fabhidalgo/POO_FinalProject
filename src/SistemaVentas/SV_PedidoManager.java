@@ -28,11 +28,11 @@ public class SV_PedidoManager {
 
         SV_Pedido pedido = new SV_Pedido(clienteEncontrado);
 
-        while (true) {
-            System.out.print("Ingrese el nombre del producto o 'fin' para terminar: ");
+        boolean agregarOtro = true;
+        while (agregarOtro) {
+            System.out.print("Ingrese el nombre del producto: ");
             String nombreProducto = scanner.nextLine();
-            if (nombreProducto.equalsIgnoreCase("fin")) break;
-
+            
             SI_Producto producto = inventario.buscarProducto(nombreProducto);
 
             if (producto != null) {
@@ -41,9 +41,13 @@ public class SV_PedidoManager {
                 scanner.nextLine();
                 pedido.agregarProducto(producto, cantidad);
             } else {
-                System.out.println("Pedido no encontrado.");
-            }
+                System.out.println("Producto no encontrado.");
         }
+
+        System.out.print("¿Desea agregar otro producto al pedido? (s/n): ");
+        String respuesta = scanner.nextLine();
+        agregarOtro = respuesta.equalsIgnoreCase("s");
+    }
         pedidos.add(pedido);
         System.out.println("Pedido creado.");
     }
@@ -52,8 +56,10 @@ public class SV_PedidoManager {
         if (pedidos.isEmpty()) {
             System.out.println("No se ha creado ningún pedido.");
         } else {
+            System.out.println("--- Pedido(s) creado(s) ---");
             for (SV_Pedido pedido : pedidos) {
                 System.out.println(pedido);
+                scanner.nextLine();
             }
         }
     }

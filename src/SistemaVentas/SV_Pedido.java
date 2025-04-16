@@ -15,7 +15,7 @@ public class SV_Pedido {
             for (int i = 0; i < cantidad; i++){
                 productos.add(producto);
             }
-            System.out.println("Producto agregado al pedido.");
+            System.out.println("Producto(s) agregado(s) al pedido.");
         } else {
             System.out.println("Stock insuficiente.");
         }
@@ -40,8 +40,10 @@ public class SV_Pedido {
                 }
                 double precioUnitario = producto.getPrecio();
                 double precioTotal = precioUnitario * cantidad;
+                String product = producto.getItem();
+                int stock = producto.getStock();
                 
-                 resultado = resultado + " | Producto: " + producto + " | Cantidad: " + cantidad + " | Precio Unitario: " + precioUnitario + " | Precio Total: " + precioTotal;
+                 resultado = resultado + " | Producto: " + product + " | Cantidad: " + cantidad + " | Precio Unitario: " + precioUnitario + " | Precio Total: " + precioTotal+ " | Stock: " + stock;
                  
                  productosProcesados.add(producto);
             }

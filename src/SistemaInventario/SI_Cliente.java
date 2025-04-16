@@ -8,15 +8,25 @@ public class SI_Cliente {
     private Scanner scanner = new Scanner (System.in);
     
     public void agregarCliente(){
-        System.out.println("Ingrese el nombre del cliente: ");
-        String nombre = scanner.nextLine();
-        System.out.println("Ingrese dirección del cliente: ");
-        String direccion = scanner.nextLine();
+        boolean siguiente = true;
+        while (siguiente) {
+            System.out.print("Ingrese el nombre del cliente: ");
+            String nombre = scanner.nextLine();
+            System.out.print("Ingrese dirección del cliente: ");
+            String direccion = scanner.nextLine();
         
-        SV_Cliente cliente = new SV_Cliente(nombre, direccion);
-        clientes.add(cliente);
-        System.out.println("Cliente agregado");
+            SV_Cliente cliente = new SV_Cliente(nombre, direccion);
+            clientes.add(cliente);
+            System.out.println("Cliente agregado");
+        
+            System.out.print("¿Desea agregar otro cliente? (s/n): ");
+            String respuesta = scanner.nextLine();
+            if (!respuesta.equalsIgnoreCase("s")){
+                siguiente = false;
+            }
+        }
     }
+    
     public SV_Cliente buscarCliente(String nombre){
         for (SV_Cliente cliente : clientes){
             if (cliente.getNombre().equalsIgnoreCase(nombre)){
