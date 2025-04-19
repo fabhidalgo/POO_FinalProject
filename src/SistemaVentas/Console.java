@@ -12,15 +12,14 @@ public class Console {
     public void ejecutar() {
         boolean salir = false;
         while (!salir) {
-            System.out.println("----- Bienvenido al Sistema -----");
+            System.out.println("----- Bienvenido al Sistema de Inventario -----");
             System.out.println("1. Agregar Productos");
             System.out.println("2. Ver Inventario");
             System.out.println("3. Agregar Clientes");
-            System.out.println("4. Hacer Pedido");
-            System.out.println("5. Ver Pedidos");
-            System.out.println("6. Salir");
+            System.out.println("4. Seguir al Sistema de Ventas");
+            System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
-            
+
             int opcion = scanner.nextInt();
             scanner.nextLine();
 
@@ -28,11 +27,38 @@ public class Console {
                 case 1 -> inventario.agregarProducto();
                 case 2 -> inventario.verInventario();
                 case 3 -> cliente.agregarCliente();
-                case 4 -> pedidoManager.hacerPedido();
-                case 5 -> pedidoManager.verPedidos();
-                case 6 -> {
+                case 4 -> ejecutarSV();
+                case 5 -> {
                     salir = true;
-                    System.out.println("¡Gracias por usar el sistema! Hasta pronto. ");
+                    System.out.println("¡Gracias por usar el sistema! Hasta pronto.");
+                }
+                default -> System.out.println("Opción inválida.");
+            }
+        }
+    }
+
+    private void ejecutarSV() {
+        boolean salirSV = false;
+        while (!salirSV) {
+            System.out.println("----- Bienvenido al Sistema de Ventas -----");
+            System.out.println("1. Realizar Pedido");
+            System.out.println("2. Ver Pedidos");
+            System.out.println("3. Ver Stock");
+            System.out.println("4. Regresar al Sistema de Inventario");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            int opcionSV = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcionSV) {
+                case 1 -> pedidoManager.hacerPedido();
+                case 2 -> pedidoManager.verPedidos();
+                case 3 -> inventario.verInventario();
+                case 4 -> salirSV = true;
+                case 5 -> {
+                    System.out.println("¡Gracias por usar el sistema! Hasta pronto.");
+                    System.exit(0);
                 }
                 default -> System.out.println("Opción inválida.");
             }

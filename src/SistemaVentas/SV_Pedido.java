@@ -40,10 +40,9 @@ public class SV_Pedido {
                 }
                 double precioUnitario = producto.getPrecio();
                 double precioTotal = precioUnitario * cantidad;
-                String product = producto.getItem();
-                int stock = producto.getStock();
+                String nombreProducto = producto.getItem();
                 
-                 resultado = resultado + " | Producto: " + product + " | Cantidad: " + cantidad + " | Precio Unitario: " + precioUnitario + " | Precio Total: " + precioTotal+ " | Stock: " + stock;
+                 resultado = resultado + " | Producto: " + nombreProducto + " | Cantidad: " + cantidad + " | Precio Unitario: S/ " + precioUnitario + " | Precio Total: S/ " + precioTotal;
                  
                  productosProcesados.add(producto);
             }
