@@ -1,0 +1,22 @@
+@startuml
+package SistemaInventario {
+  class SI_Cliente {
+    - clientes: ArrayList<SV_Cliente>
+    - scanner: Scanner
+    + agregarCliente()
+    + buscarCliente(nombre: String): SV_Cliente
+  }
+}
+
+package SistemaVentas {
+  class SV_Cliente {
+    - nombre: String
+    - direccion: String
+    + SV_Cliente(nombre: String, direccion: String)
+    + getNombre(): String
+    + getDireccion(): String
+  }
+}
+
+SI_Cliente --o SV_Cliente : contiene
+@enduml

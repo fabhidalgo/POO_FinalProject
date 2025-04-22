@@ -1,0 +1,44 @@
+@startuml
+package SistemaVentas {
+  class SV_PedidoManager {
+    - inventario: SI_Inventario
+    - siCliente: SI_Cliente
+    - pedidos: ArrayList<SV_Pedido>
+    - scanner: Scanner
+    + SV_PedidoManager(inventario: SI_Inventario, cliente: SI_Cliente)
+    + hacerPedido()
+    + verPedidos()
+  }
+
+  class SV_Pedido {
+    + agregarProducto(producto: SI_Producto, cantidad: int)
+    + toString(): String
+  }
+
+  class SV_Cliente {
+    + getNombre(): String
+    + getDireccion(): String
+  }
+}
+
+package SistemaInventario {
+  class SI_Inventario {
+    + buscarProducto(nombre: String): SI_Producto
+  }
+
+  class SI_Cliente {
+    + buscarCliente(nombre: String): SV_Cliente
+  }
+
+  class SI_Producto {
+    + getStock(): int
+    + reducirStock(cantidad: int)
+  }
+}
+
+SV_PedidoManager --o SI_Inventario : usa
+SV_PedidoManager --o SI_Cliente : usa
+SV_PedidoManager --o SV_Pedido : contiene
+SV_Pedido ..> SV_Cliente : tiene un
+SV_Pedido ..> SI_Producto : agrega
+@enduml

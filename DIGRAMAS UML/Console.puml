@@ -1,0 +1,36 @@
+@startuml
+package SistemaVentas {
+  class Console {
+    - inventario: SI_Inventario
+    - cliente: SI_Cliente
+    - pedidoManager: SV_PedidoManager
+    - scanner: Scanner
+    + ejecutar()
+    - ejecutarSV()
+  }
+
+  class SV_PedidoManager {
+    - inventario: SI_Inventario
+    - cliente: SI_Cliente
+    + SV_PedidoManager(inventario: SI_Inventario, cliente: SI_Cliente)
+    + hacerPedido()
+    + verPedidos()
+  }
+}
+
+package SistemaInventario {
+  class SI_Cliente {
+    + agregarCliente()
+  }
+  class SI_Inventario {
+    + agregarProducto()
+    + verInventario()
+  }
+}
+
+Console ..> SI_Inventario : usa
+Console ..> SI_Cliente : usa
+Console --o SV_PedidoManager : contiene
+SV_PedidoManager ..> SI_Inventario : usa
+SV_PedidoManager ..> SI_Cliente : usa
+@enduml

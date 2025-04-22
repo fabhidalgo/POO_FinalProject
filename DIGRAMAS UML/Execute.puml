@@ -1,0 +1,12 @@
+@startuml
+package SistemaVentas {
+  class Execute {
+    + main(args: String[])
+  }
+  class Console {
+    + ejecutar()
+  }
+}
+
+Execute ..> Console :usa
+@enduml

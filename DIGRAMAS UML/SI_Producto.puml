@@ -1,0 +1,18 @@
+@startuml
+package SistemaInventario {
+  class SI_Producto {
+    - item: String
+    - precio: double
+    - stock: int
+    + SI_Producto(item: String, precio: double, stock: int)
+    + getItem(): String
+    + setItem(item: String)
+    + getPrecio(): double
+    + setPrecio(precio: double)
+    + getStock(): int
+    + setStock(stock: int)
+    + reducirStock(cantidad: int)
+    + toString(): String
+  }
+}
+@enduml

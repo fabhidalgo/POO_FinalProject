@@ -1,0 +1,25 @@
+@startuml
+package SistemaInventario {
+  class SI_Inventario {
+    - productos: ArrayList<SI_Producto>
+    - scanner: Scanner
+    + agregarProducto()
+    + verInventario()
+    + buscarProducto(nombre: String): SI_Producto
+  }
+
+  class SI_Producto {
+    - item: String
+    - precio: double
+    - stock: int
+    + SI_Producto(item: String, precio: double, stock: int)
+    + getItem(): String
+    + getPrecio(): double
+    + getStock(): int
+    + setStock(stock: int)
+    + toString(): String
+  }
+}
+
+SI_Inventario --o SI_Producto : contiene
+@enduml

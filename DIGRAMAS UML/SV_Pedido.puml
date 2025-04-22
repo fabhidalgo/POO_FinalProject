@@ -1,0 +1,29 @@
+@startuml
+package SistemaVentas {
+  class SV_Pedido {
+    - cliente: SV_Cliente
+    - productos: ArrayList<SI_Producto>
+    + SV_Pedido(cliente: SV_Cliente)
+    + agregarProducto(producto: SI_Producto, cantidad: int)
+    + toString(): String
+  }
+
+  class SV_Cliente {
+    + getNombre(): String
+    + getDireccion(): String
+    + toString(): String
+  }
+}
+
+package SistemaInventario {
+  class SI_Producto {
+    + getStock(): int
+    + reducirStock(cantidad: int)
+    + getPrecio(): double
+    + getItem(): String
+  }
+}
+
+SV_Pedido --o SV_Cliente : contiene
+SV_Pedido --o SI_Producto : contiene
+@enduml

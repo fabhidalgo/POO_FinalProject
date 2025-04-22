@@ -1,0 +1,12 @@
+@startuml
+package SistemaVentas {
+  class SV_Cliente {
+    - nombre: String
+    - direccion: String
+    + SV_Cliente(nombre: String, direccion: String)
+    + getNombre(): String
+    + getDireccion(): String
+    + toString(): String
+  }
+}
+@enduml
