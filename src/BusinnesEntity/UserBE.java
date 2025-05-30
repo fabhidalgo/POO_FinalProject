@@ -1,19 +1,20 @@
 package BusinnesEntity;
-public class UserBE {
-    private String ID;
+public class UserBE extends ClientBE {
+    private String Code;
     private String Name;
-    private String ApellidoP;
-    private String ApellidoM;
-
+    private String LastnameP;
+    private String LastnameM;
+    private int UserState;
+    
     public UserBE() {
     }
 
-    public String getID() {
-        return ID;
+    public String getCode() {
+        return Code;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setCode(String Code) {
+        this.Code = Code;
     }
 
     public String getName() {
@@ -24,22 +25,27 @@ public class UserBE {
         this.Name = Name;
     }
 
-    public String getApellidoP() {
-        return ApellidoP;
+    public String getLastnameP() {
+        return LastnameP;
     }
 
-    public void setApellidoP(String ApellidoP) {
-        this.ApellidoP = ApellidoP;
+    public void setLastnameP(String LastnameP) {
+        this.LastnameP = LastnameP;
     }
 
-    public String getApellidoM() {
-        return ApellidoM;
+    public String getLastnameM() {
+        return LastnameM;
     }
 
-    public void setApellidoM(String ApellidoM) {
-        this.ApellidoM = ApellidoM;
+    public void setLastnameM(String LastnameM) {
+        this.LastnameM = LastnameM;
     }
-    
-    
-            
+
+    public int getCodeState() {
+        return UserState;
+    }
+
+    public void setCodeState(int CodeState) {
+        this.UserState = CodeState;
+    }   
 }

@@ -1,27 +1,27 @@
 package DataAccesObject;
-import BusinnesEntity.UserBE;
+import BusinnesEntity.SalesBE;
 import java.util.List;
-public class UserDAO extends MySQLConexion 
-        implements IBaseDAO<UserBE>
-{
+
+public class SalesDAO extends MySQLConexion 
+        implements IBaseDAO<SalesBE>{
 
     @Override
-    public int Create(UserBE input) {
+    public int Create(SalesBE input) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public UserBE Read(String id) {
+    public SalesBE Read(String id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<UserBE> ReadAll() {
+    public List<SalesBE> ReadAll() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public int Update(UserBE input) {
+    public int Update(SalesBE input) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -29,5 +29,5 @@ public class UserDAO extends MySQLConexion
     public int Delete(String id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    
 }
