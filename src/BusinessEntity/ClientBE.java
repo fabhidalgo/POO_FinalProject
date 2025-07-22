@@ -1,6 +1,11 @@
-package BusinnesEntity;
-public class ClientBE {
+package BusinessEntity;
+import java.util.Objects;
+
+public class ClientBE{
     
+    private String ClientCode;
+    private String Name;
+    private String Lastname;
     private String IDType;
     private String IDNumber;
     private String RazonSocial;
@@ -9,6 +14,30 @@ public class ClientBE {
     private String Direccion;
 
     public ClientBE() {
+    }
+
+    public String getClientCode() {
+        return ClientCode;
+    }
+
+    public void setClientCode(String ClientCode) {
+        this.ClientCode = ClientCode;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
+    }
+
+    public String getLastname() {
+        return Lastname;
+    }
+
+    public void setLastname(String Lastname) {
+        this.Lastname = Lastname;
     }
 
     public String getIDType() {
@@ -58,6 +87,5 @@ public class ClientBE {
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
     }
-
- 
 }
+    
